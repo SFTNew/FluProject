@@ -1,0 +1,50 @@
+﻿<Controls:MetroWindow x:Class="FluCreate.dialog.DataBaseDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FluCreate.dialog"
+        mc:Ignorable="d"
+        Loaded="MetroWindow_Loaded"
+                      x:Name="win"
+        Title="DataBaseDialog" Height="auto" Width="auto" ResizeMode="NoResize" WindowStartupLocation="CenterScreen"  SizeToContent="WidthAndHeight">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="数据库地址:" VerticalAlignment="Center"/>
+                <TextBox x:Name="tbUrl" Width="200" Margin="10 0 0 0 " Text="{Binding DataBaseUrl,Mode=TwoWay}" ></TextBox>
+            </StackPanel>
+        </Label>
+        <Label Grid.Row="1">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="数据库账号:" VerticalAlignment="Center"/>
+                <TextBox x:Name="tbUser" Width="200" Margin="10 0 0 0 "  Text="{Binding DataBaseUser,Mode=TwoWay}"></TextBox>
+            </StackPanel>
+        </Label>
+        <Label Grid.Row="2">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="数据库密码:" VerticalAlignment="Center"/>
+                <TextBox x:Name="tbPassword" Width="200" Margin="10 0 0 0 "  Text="{Binding DataBasePassword,Mode=TwoWay}"></TextBox>
+            </StackPanel>
+        </Label>
+        <Label Grid.Row="3">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="数据库名称:" VerticalAlignment="Center"/>
+                <TextBox x:Name="tbCatalog" Width="200" Margin="10 0 0 0 "  Text="{Binding DataBaseCatalog,Mode=TwoWay}"></TextBox>
+            </StackPanel>
+        </Label>
+        <StackPanel Orientation="Horizontal" Grid.Row="4" Margin="5">
+            <Button Content="保存修改" Width="120" Background="#FFdede66" Foreground="White" Click="Save_Button_Click"/>
+            <Button Content="取消" Width="120"  Margin="32 0 0 0" Foreground="#ff556655" Click="Cancel_Button_Click"/>
+        </StackPanel>
+    </Grid>
+</Controls:MetroWindow>
